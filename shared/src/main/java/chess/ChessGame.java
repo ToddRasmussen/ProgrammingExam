@@ -35,7 +35,51 @@ public class ChessGame {
      */
     public enum TeamColor {
         WHITE,
-        BLACK
+        BLACK;
+
+        public int getDirection() {
+            switch (this) {
+                case WHITE:
+                    return 1;
+                case BLACK:
+                    return -1;
+                default:
+                    return 1;
+            }
+        }
+
+        public int getPawnRow() {
+            switch (this) {
+                case WHITE:
+                    return 2;
+                case BLACK:
+                    return 7;
+                default:
+                    return 2;
+            }
+        }
+
+        public int getHomeRow() {
+            switch (this) {
+                case WHITE:
+                    return 1;
+                case BLACK:
+                    return 8;
+                default:
+                    return 1;
+            }
+        }
+
+        public TeamColor inverse() {
+            switch (this) {
+                case WHITE:
+                    return BLACK;
+                case BLACK:
+                    return WHITE;
+                default:
+                    return BLACK;
+            }
+        }
     }
 
     /**
